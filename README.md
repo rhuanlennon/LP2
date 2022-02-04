@@ -2,3 +2,6 @@
 ## Repositório com os programas da disciplina Linguagem de Programação 2
  *O Primeiro Programa da disciplina é o velho conhecido*:  
 **Hello World**
+
++ Professor: Francisco Sant'anna
++ Aluno: Rhuan Lennon
