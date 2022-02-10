@@ -39,6 +39,3 @@ class Hello2DFrame extends JFrame {
         g2d.drawString("Rhuan Lennon ", 135, 250);
     }
 }
-
-// O super.paint(g) ele chama o método paint da super classe que no caso é o JFrame então ao redimensionar o tamanho da janela o super.paint renderiza os  frames e a janela fica branco e mudando a posição no meu caso do triângulo
-// no caso ao omitir o super.paint(g) ao rendimensionar a janela a renderização para de acontecer então não o ocorre mais da janela ficar branca e a posição do triângulo fica fixa independente do tamanho da janela
