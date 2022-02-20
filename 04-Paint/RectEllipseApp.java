@@ -12,7 +12,7 @@ class RectEllipseApp {
 }
 
 class RectEllipseFrame extends JFrame {
-    // Rect r1;
+    Rect r1, r2, r3;
     Ellipse e1, e2, e3;
 
     RectEllipseFrame () {
@@ -25,7 +25,10 @@ class RectEllipseFrame extends JFrame {
         );
         this.setTitle("Rect and Ellipse");
         this.setSize(350, 350);
-        // this.r1 = new Rect(50,50, 100,30);
+        this.r1 = new Rect(50,50, 100,30);
+        this.r2 = new Rect(250,250,100,150);
+        this.r3 = new Rect(450,250,100,180);
+
         this.e1 = new Ellipse(200,100, 140,30);
         this.e2 = new Ellipse(300,150, 150, 30);
         this.e3 = new Ellipse(400,200, 160,30);
@@ -33,7 +36,10 @@ class RectEllipseFrame extends JFrame {
 
     public void paint (Graphics g) {
         super.paint(g);
-        // this.r1.paint(g);
+        this.r1.paint(g, Color.black, Color.red);
+        this.r2.paint(g, Color.gray, Color.orange);
+        this.r3.paint(g, Color.cyan, Color.blue);
+
         this.e1.paint(g, Color.black, Color.green);
         this.e2.paint(g, Color.blue, Color.orange);
         this.e3.paint(g, Color.green, Color.red);
@@ -86,7 +92,7 @@ class Ellipse {
         g.setColor(colorDraw);
         g2d.draw(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
         g2d.setColor(colorFill);
-        g2d.fillOval(this.x, this.y, this.w, this.h);
+        g2d.fillOval(this.x, this.y, this.w, this.h); 
 
     }
 }
