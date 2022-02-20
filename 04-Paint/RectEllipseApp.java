@@ -56,9 +56,12 @@ class Rect {
             this.w, this.h, this.x, this.y);
     }
 
-   public void paint (Graphics g) {
-        g.drawRect(this.x,this.y, this.w,this.h);
-       
+   public void paint (Graphics g, Color colorFill, Color colorDraw ) {
+        g.setColor(colorFill);
+        g.fillRect(this.x,this.y, this.w,this.h);
+        g.setColor(colorDraw);
+        g.drawRect(this.x,this.y, this.w,this.h);  
+        
     }
 }
 
