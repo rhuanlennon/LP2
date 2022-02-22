@@ -25,36 +25,39 @@ class RectEllipseFrame extends JFrame {
         );
         this.setTitle("Rect and Ellipse");
         this.setSize(350, 350);
-        this.r1 = new Rect(50,50, 100,30);
-        this.r2 = new Rect(250,250,100,150);
-        this.r3 = new Rect(450,250,100,180);
+        this.r1 = new Rect(50,50, 100,30, Color.red, Color.black);
+        this.r2 = new Rect(250,250,100,150, Color.blue, Color.orange);
+        this.r3 = new Rect(450,250,100,180, Color.green, Color.red);
 
-        this.e1 = new Ellipse(200,100, 140,30);
-        this.e2 = new Ellipse(300,150, 150, 30);
-        this.e3 = new Ellipse(400,200, 160,30);
+        this.e1 = new Ellipse(200,100, 140,30, Color.black, Color.green);
+        this.e2 = new Ellipse(300,150, 150, 30, Color.blue, Color.orange);
+        this.e3 = new Ellipse(400,200, 160,30, Color.green, Color.red);
     }
 
     public void paint (Graphics g) {
         super.paint(g);
-        this.r1.paint(g, Color.black, Color.red);
-        this.r2.paint(g, Color.gray, Color.orange);
-        this.r3.paint(g, Color.cyan, Color.blue);
+        this.r1.paint(g);
+        this.r2.paint(g);
+        this.r3.paint(g);
 
-        this.e1.paint(g, Color.black, Color.green);
-        this.e2.paint(g, Color.blue, Color.orange);
-        this.e3.paint(g, Color.green, Color.red);
+        this.e1.paint(g);
+        this.e2.paint(g);
+        this.e3.paint(g);
     }
 }
 
 class Rect {
     int x, y;
     int w, h;
+    Color colorFill, colorDraw;
 
-    Rect (int x, int y, int w, int h) {
+    Rect (int x, int y, int w, int h, Color colorFill, Color colorDraw) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
+        this.colorFill = colorFill;
+        this.colorDraw = colorDraw;
     }
 
     void print () {
@@ -62,24 +65,26 @@ class Rect {
             this.w, this.h, this.x, this.y);
     }
 
-   public void paint (Graphics g, Color colorFill, Color colorDraw ) {
+   public void paint (Graphics g) {
         g.setColor(colorFill);
         g.fillRect(this.x,this.y, this.w,this.h);
         g.setColor(colorDraw);
-        g.drawRect(this.x,this.y, this.w,this.h);  
-        
+        g.drawRect(this.x,this.y, this.w,this.h);    
     }
 }
 
 class Ellipse {
     int x, y;
     int w, h;
+    Color colorFill, colorDraw;
 
-    Ellipse (int x, int y, int w, int h) {
+    Ellipse (int x, int y, int w, int h, Color colorFill, Color colorDraw) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
+        this.colorFill = colorFill;
+        this.colorDraw = colorDraw;
     }
 
     void print () {
@@ -87,12 +92,11 @@ class Ellipse {
             this.w, this.h, this.x, this.y);
     }
 
-    void paint (Graphics g, Color colorFill, Color colorDraw) {
+    void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(colorDraw);
+        g2d.setColor(colorDraw);
         g2d.draw(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
         g2d.setColor(colorFill);
-        g2d.fillOval(this.x, this.y, this.w, this.h); 
-
+        g2d.fillOval(this.x, this.y, this.w, this.h);
     }
 }
