@@ -5,8 +5,8 @@ import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
 public class Ellipse {
-    int x, y;
-    int w, h;
+    private int x, y;
+    private int w, h;
 
     public Ellipse (int x, int y, int w, int h) {
         this.x = x;
