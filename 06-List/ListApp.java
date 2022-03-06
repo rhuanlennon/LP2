@@ -36,6 +36,45 @@ class ListRect extends JFrame {
     }
 }
 
+class ListEllipse extends JFrame {
+    ArrayList<Ellipse> es = new ArrayList<Ellipse>();
+    Random rand = new Random();
+
+    ListEllipse () {
+        this.addWindowListener (
+            new WindowAdapter() {
+                public void windowClosing (WindowEvent e) {
+                    System.exit(0);
+                }
+            }
+        );
+
+        this.addKeyListener (
+            new KeyAdapter() {
+                public void keyPressed (KeyEvent evt) {
+                    if (evt.getKeyChar() == 'e') {
+                        int x = rand.nextInt(300);
+                        int y = rand.nextInt(300);
+                        int w = rand.nextInt(80);
+                        int h = rand.nextInt(80);
+                        es.add(new Ellipse(x,y, w,h));
+                        repaint();  // outer.repaint()
+                    }
+                }
+            }
+        );
+
+        this.setTitle("Lista de Elipses");
+        this.setSize(350, 350);
+    }
+
+    public void paint (Graphics g) {
+        super.paint(g);
+        for (Ellipse e: this.es) {
+            e.paint(g);
+        }
+    }
+}
 class Rect {
     int x, y;
     int w, h;
