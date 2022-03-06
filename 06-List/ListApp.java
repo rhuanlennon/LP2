@@ -89,6 +89,7 @@ class ListEllipse extends JFrame {
         }
     }
 }
+
 class Rect {
     int x, y;
     int w, h;
