@@ -1,3 +1,17 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.awt.geom.Ellipse2D;
+
+class ListApp {
+    public static void main (String[] args) {
+        ListEllipse frame = new ListEllipse();
+        frame.setVisible(true);
+    }
+}
+
 class ListRect extends JFrame {
     ArrayList<Rect> rs = new ArrayList<Rect>();
     Random rand = new Random();
