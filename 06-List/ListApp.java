@@ -26,3 +26,12 @@ class ListRect extends JFrame {
             }
         );
     }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        for (Rect r: this.rs) {
+            r.paint(g);
+        }
+
+    }
+}
