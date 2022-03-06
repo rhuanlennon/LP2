@@ -95,3 +95,23 @@ class Rect {
         g2d.drawRect(this.x,this.y, this.w,this.h);
     }
 }
+
+class Ellipse {
+    int x, y;
+    int w, h;
+
+    Ellipse (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = h;
+        this.h = h;
+    }
+    void print () {
+        System.out.format("Elipse de tamanho (%d,%d) na posicao (%d,%d).\n",
+        this.w, this.h, this.x, this.y);
+    }
+    void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.draw(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
+    }
+}
