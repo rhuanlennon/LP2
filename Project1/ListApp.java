@@ -36,18 +36,19 @@ class ListFrame extends JFrame {
 
                         int w = rand.nextInt(80);
                         int h = rand.nextInt(80);
+
                         if (evt.getKeyChar() == 'r') {
-                            Rect r = new Rect(x, y, w, h);
+                            Rect r = new Rect(x, y, w, h, Color.green, Color.red);
                             figs.add(r);
                         } 
                         else if (evt.getKeyChar() == 'e') {
-                            figs.add(new Ellipse(x, y, w, h));
+                            figs.add(new Ellipse(x, y, w, h, Color.blue, Color.yellow));    
                         }  
                         else if (evt.getKeyChar() == 'p') {
-                            figs.add(new Poligono(x, y, w, h));
+                            figs.add(new Poligono(x, y, w, h, Color.red, Color.blue));
                           }
                         else if (evt.getKeyChar() == 'l') {
-                            figs.add(new Line(x, y, w, h));
+                            figs.add(new Line(x, y, w, h, Color.blue));
                           }
                         repaint();
                     }
