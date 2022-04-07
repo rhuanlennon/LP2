@@ -3,8 +3,9 @@ package figures;
 import java.awt.*;
 
 public class Poligono extends Figure {
-	private Polygon p = new Polygon();
+	public Polygon p = new Polygon();
     public Color colorDraw;
+
 	public Poligono(int x, int y, int w, int h, Color colorFill, Color colorDraw) {
 		super(x, y, w, h, colorFill);
         
@@ -23,9 +24,10 @@ public class Poligono extends Figure {
 	public void paint(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(colorDraw);
-        g2d.drawPolygon(p.xpoints, p.ypoints, p.npoints);
-        g2d.setColor(colorFill);
         g2d.fillPolygon(p.xpoints, p.ypoints, p.npoints);
+         
+        g2d.setColor(colorFill);
+        g2d.drawPolygon(p.xpoints, p.ypoints, p.npoints);
 	}
 
 }

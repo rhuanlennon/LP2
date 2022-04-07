@@ -1,8 +1,6 @@
 package figures;
 
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 
 import java.awt.Graphics;
 
@@ -18,5 +16,16 @@ public abstract class Figure {
         this.h = h;
         this.colorFill = colorFill;
     }
+
+    public void drag(int dx, int dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+
+    public boolean clicked (int x, int y) {
+        return (this.x <= x && x<= this.x + this.w && this.y <= y && y <= this.y + this.w);
+    }
+
     public abstract void paint (Graphics g);
+
 }
